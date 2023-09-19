@@ -397,7 +397,6 @@ public abstract class ServerPlayerMixin_API extends PlayerMixin_API implements S
         values.add(this.requireValue(Keys.GAME_MODE).asImmutable());
         values.add(this.requireValue(Keys.HAS_VIEWED_CREDITS).asImmutable());
         values.add(this.requireValue(Keys.LOCALE).asImmutable());
-        values.add(this.requireValue(Keys.PREVIOUS_GAME_MODE).asImmutable());
         values.add(this.requireValue(Keys.SKIN_PARTS).asImmutable());
         values.add(this.requireValue(Keys.SPECTATOR_TARGET).asImmutable());
         // TODO ClassCastException: ServerStatsCounter -> StatsCounterBridge
@@ -405,6 +404,7 @@ public abstract class ServerPlayerMixin_API extends PlayerMixin_API implements S
         values.add(this.requireValue(Keys.VIEW_DISTANCE).asImmutable());
 
         this.getValue(Keys.HEALTH_SCALE).map(Value::asImmutable).ifPresent(values::add);
+        this.getValue(Keys.PREVIOUS_GAME_MODE).map(Value::asImmutable).ifPresent(values::add);
         this.getValue(Keys.SKIN_PROFILE_PROPERTY).map(Value::asImmutable).ifPresent(values::add);
 
         return values;
